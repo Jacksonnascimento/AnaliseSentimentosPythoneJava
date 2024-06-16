@@ -23,16 +23,16 @@ def analise_sentimentos(texto):
     # Determinar a interpretação do sentimento
     if polaridade > 0:
         if polaridade >= 0.5:
-            resultadoPolaridade = " e expressa um sentimento muito positivo."
+            resultadoPolaridade = "Expressa um sentimento muito positivo."
         else:
-            resultadoPolaridade = " e expressa um sentimento positivo moderado."
+            resultadoPolaridade = "Expressa um sentimento positivo moderado."
     elif polaridade < 0:
         if polaridade <= -0.5:
-            resultadoPolaridade = " e expressa um sentimento muito negativo."
+            resultadoPolaridade = "Expressa um sentimento muito negativo."
         else:
-            resultadoPolaridade = " e expressa um sentimento negativo moderado."
+            resultadoPolaridade = "Expressa um sentimento negativo moderado."
     else:
-        resultadoPolaridade = " e neutro."
+        resultadoPolaridade = "Neutro."
 
     if subjetividade >= 0.75:
         resultadoSubjetividade = "Altamente subjetivo"
@@ -41,7 +41,7 @@ def analise_sentimentos(texto):
     else:
         resultadoSubjetividade = "Objetivo"
 
-    return "Texto em pt-br: " + texto + "\nTexto em en: " + texto_traduzido + "\nResultado: " + resultadoSubjetividade + resultadoPolaridade
+    return resultadoPolaridade
 
 if __name__ == "__main__":
     # Para garantir que a entrada use UTF-8
